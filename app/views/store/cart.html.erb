@@ -1,0 +1,26 @@
+
+<h2>Your cart</h2>
+<br>
+<%if @cart && @cart.cart_items != []%>
+<table border="2">
+	<tr>
+		<th>Product</th>
+		<th>Price</th>
+		<th>Quantity</th>
+	</tr>
+    <%@cart.cart_items.each do |item|%>
+	<tr>
+		<td><%=item.product_title%></td>
+		<td>$<%=item.product_price%></td>
+		<td><%=item.quantity%></td>
+	</tr>
+		
+	<%end%>
+</table>
+<%= button_to "Checkout", :action => :checkout %>
+<%= button_to "Empty Cart", :action => :empty_cart%>
+<%else%>
+Cart is empty
+<%end%>
+<br><br>
+<%= link_to "Back", store_index_path %>

@@ -1,0 +1,9 @@
+<h3>Orders</h3>
+
+<%@orders.each do |order|%>
+Order id: <%= order.id%><br>
+Customer name: <%= order.name%><br>
+Cart id: <%= order.cart_id%>
+<%= link_to 'Show details', order_path(order) %>
+<br><br>
+<%end%>

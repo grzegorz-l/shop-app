@@ -1,0 +1,15 @@
+<h1>Store</h1>
+<%= link_to "Your cart", :action => :cart %>
+<h2>Products</h2>
+<table>
+<%@products.each do |product|%>
+<tr>
+	<td>
+		<h3><%=product.title%></h3>
+		<%=product.description%><br>
+		price: $<%= product.price%>
+		<%= button_to "Add to Cart", :action => :add_to_cart, :id => product %>
+	</td>
+</tr>
+<%end%>
+</table>

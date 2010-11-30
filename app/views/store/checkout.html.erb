@@ -1,0 +1,35 @@
+<div>
+  
+  <% form_for :order, :url => { :action => :save_order } do |f| %>
+    <fieldset>
+      <legend>Please Enter Your Details</legend>
+
+      <div>
+        <%= f.label :name, "Name:" %>
+        <%= f.text_field :name, :size => 40 %>
+      </div>
+
+      <div>
+        <%= f.label :city, "City:" %>
+        <%= f.text_field :city%>
+      </div>
+	  
+	  <div>
+        <%= f.label :street, "Street:" %>
+        <%= f.text_field :street%>
+      </div>
+	  
+	  <div>
+        <%= f.label :h_number, "Home number:" %>
+        <%= f.text_field :h_number%>
+      </div>
+	  
+      <div>
+        <%= f.label :post_code, "Post code:" %>
+        <%= f.text_field :post_code%>
+      </div>
+    
+      <%= submit_tag "Place Order", :class => "submit" %>
+    </fieldset>
+  <% end %>  
+</div>

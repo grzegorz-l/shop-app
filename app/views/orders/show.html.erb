@@ -1,0 +1,49 @@
+<h2>Order details</h2>
+<table>
+<tr>
+	<td>
+		<h3>Customer details</h3>
+		<table border="2">
+			<tr>
+				<td>Name: </td>
+				<td><%= @order.name%></td>
+			</tr>
+			<tr>
+				<td>Post code: </td>
+				<td><%= @order.post_code%></td>
+			</tr>
+			<tr>
+				<td>City: </td>
+				<td><%= @order.city%></td>
+			</tr>
+			<tr>
+				<td>Street: </td>
+				<td><%= @order.street%> <%= @order.h_number%></td>
+			</tr>
+			
+		</table>
+	</td>
+</tr>
+<tr>
+	<td>
+		<h3>Cart</h3>
+		<table border="2">
+			<tr>
+				<th>Product</th>
+				<th>Price</th>
+				<th>Quantity</th>
+			</tr>
+    		<%@cart.cart_items.each do |item|%>
+			<tr>
+				<td><%=item.product_title%></td>
+				<td>$<%=item.product_price%></td>
+				<td><%=item.quantity%></td>
+			</tr>
+			<%end%>
+		</table>
+	</td>
+</tr>
+
+</table>
+<br>
+<%= link_to 'Back', orders_path%>
